@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+
+use warnings;
+use strict;
+use feature qw(say);
+
+my $USAGE = <<END;
+Usage: prefetch-github OWNER NAME [--hash]
+
+e.g. prefetch-github justinwoo easy-purescript-nix --hash
+END
+
+if ($#ARGV < 1) {
+  say $USAGE;
+  exit;
+}
+
+my ($owner, $name) = @ARGV;
+
+my $hash = $#ARGV > 1 && $ARGV[2] eq "--hash" ? 1 : 0;
+
+my $cmd = "nix-prefetch-git https://www.github.com/${owner}/${name} --quiet";
+
+if ($hash) {
+  system "$cmd | jq '.sha256' -r";
+} else {
+  system "$cmd";
+}
