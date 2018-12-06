@@ -2,10 +2,12 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "make-tar";
-  src = import ./default.nix {};
+  buildInputs = [pkgs.go];
+  src = ./.;
   shellHook = ''
-    mkdir bin
-    cp ${src}/bin/prefetch-github bin
+    ${pkgs.go}/bin/go build prefetch-github.go
+    mkdir -p bin
+    mv prefetch-github bin
     tar zcvf prefetch-github.tar.gz bin
   '';
 }

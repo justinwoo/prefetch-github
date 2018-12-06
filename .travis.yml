@@ -8,8 +8,7 @@ script:
   - cd test
   - make
   - cd ..
-before_deploy:
-  - nix-shell make-tar.nix --run 'echo make-tar complete.'
+  - nix-shell --pure make-tar.nix --run 'echo make-tar complete.'
 deploy:
   provider: releases
   api_key: $API_KEY
