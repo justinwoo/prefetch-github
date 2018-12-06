@@ -7,6 +7,7 @@ script:
   - export LOCALE_ARCHIVE_2_27="${glibcLocales}/lib/locale/locale-archive"
   - cd test
   - make
+  - cd ..
 before_deploy:
   - nix-shell make-tar.nix --run 'echo make-tar complete.'
 deploy:
@@ -16,4 +17,4 @@ deploy:
     - prefetch-github.tar.gz
   skip_cleanup: true
   on:
-tags: true
+    tags: true
