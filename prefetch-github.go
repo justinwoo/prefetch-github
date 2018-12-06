@@ -46,8 +46,11 @@ func main() {
 	var asBranch bool
 	var hashOnly bool
 
+	flag.StringVar(&owner, "o", "", "Alias for -owner")
 	flag.StringVar(&owner, "owner", "", "The owner of the repository. e.g. justinwoo")
+	flag.StringVar(&repo, "r", "", "Alias for -repo")
 	flag.StringVar(&repo, "repo", "", "The repository name. e.g. easy-purescript-nix")
+	flag.StringVar(&rev, "v", "", "Alias for -rev")
 	flag.StringVar(&rev, "rev", "", "Optionally specify which revision should be fetched.")
 	flag.BoolVar(&asFetchGit, "fetchgit", false, "Print the output in the fetchGit format. Default: fromFromGitHub")
 	flag.BoolVar(&asBranch, "branch", false, "Treat the rev as a branch, where the commit reference should be used.")
