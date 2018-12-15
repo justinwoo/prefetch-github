@@ -32,3 +32,13 @@ Usage of prefetch-github:
   -rev string
         Optionally specify which revision should be fetched.
 ```
+
+## Why another Prefetch GitHub tool? What's wrong with...
+
+### `nix-prefetch-git`
+
+Not that much, just that it's annoying to take its input and work with it personally.
+
+### [`nix-prefetch-github`](https://github.com/seppeljordan/nix-prefetch-github)
+
+This tool regularly does not successfully install for me through neither nixpkgs nor pip. I also hate Python for being irreproducible in general.
