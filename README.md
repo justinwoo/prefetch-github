@@ -41,4 +41,4 @@ Not that much, just that it's annoying to take its input and work with it person
 
 ### [`nix-prefetch-github`](https://github.com/seppeljordan/nix-prefetch-github)
 
-This tool regularly does not successfully install for me through neither nixpkgs nor pip. I also hate Python for being irreproducible in general.
+This tool regularly does not successfully install for me through neither nixpkgs nor pip. I also hate Python for being irreproducible in general. I also have not found that its command line arguments are read in correctly, but this may have been addressed in other releases that I have not been able to install.
