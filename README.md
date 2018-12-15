@@ -18,19 +18,25 @@ A helper to save me some keystrokes from `nix-prefetch-git`.
 
 ```sh
 > prefetch-github -h
-Usage of prefetch-github:
+Usage of /home/justin/.nix-profile/bin/prefetch-github:
   -branch
         Treat the rev as a branch, where the commit reference should be used.
   -fetchgit
         Print the output in the fetchGit format. Default: fromFromGitHub
   -hash-only
         Print only the hash.
+  -o string
+        Alias for -owner
   -owner string
         The owner of the repository. e.g. justinwoo
+  -r string
+        Alias for -repo
   -repo string
         The repository name. e.g. easy-purescript-nix
   -rev string
         Optionally specify which revision should be fetched.
+  -v string
+        Alias for -rev
 ```
 
 ## Why another Prefetch GitHub tool? What's wrong with...
