@@ -18,5 +18,8 @@ pkgs.stdenv.mkDerivation {
       --prefix PATH : ${pkgs.lib.makeBinPath [
         pkgs.nix-prefetch-git
       ]}
+
+    mkdir -p $out/etc/bash_completion.d/
+    cp $src/prefetch-github-completion.bash $out/etc/bash_completion.d/prefetch-github-completion.bash
   '';
 }
