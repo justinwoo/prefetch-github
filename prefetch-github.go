@@ -80,6 +80,8 @@ func main() {
 		"--rev",
 		revArg,
 	)
+	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "GIT_TERMINAL_PROMPT=0")
 
 	output, execErr := cmd.CombinedOutput()
 
