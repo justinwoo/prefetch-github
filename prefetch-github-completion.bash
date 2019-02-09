@@ -5,19 +5,21 @@ _prefetch-github() {
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts="-branch -fetchgit -hash-only -o -owner -r -repo -rev -v"
+    opts="-branch -fetchgit -hash-only -owner -repo -rev"
 
     case $prev in
-        "-o" | "--owner")
+        "-owner")
             COMPREPLY=("justinwoo");
             return 0;;
-        "-r" | "-repo")
+        "-repo")
             COMPREPLY=("prefetch-github");
             return 0;;
-        "-v" | "-rev")
+        "-rev")
             COMPREPLY=("REVISION");
             return 0;;
         *)
+            # shellcheck disable=SC2207
+            # shellcheck disable=SC2086
             COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) );
             return 0;;
     esac
