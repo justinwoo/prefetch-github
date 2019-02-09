@@ -1,4 +1,5 @@
 -- | A simple program for preparing fetchFromGitHub expressions for nix
+-- | Ported from go. See history for original.
 
 module Main where
 
