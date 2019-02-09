@@ -7,11 +7,11 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = [
     pkgs.makeWrapper
-    pkgs.go
+    pkgs.ghc
   ];
 
   installPhase = ''
-    go build prefetch-github.go
+    ghc -o prefetch-github prefetch-github.hs
     install -D -m555 -t $out/bin prefetch-github
 
     wrapProgram $out/bin/prefetch-github \
