@@ -14,6 +14,7 @@ main = do
   case args of
     [] -> help
     ["help"] -> help
+    ["-help"] -> help
     _ -> main' args
 
 main' :: [String] -> IO ()
