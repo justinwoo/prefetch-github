@@ -1,2 +1,5 @@
 prefetch-github
 prefetch-github.tar.gz
+/target
+**/*.rs.bk
+result

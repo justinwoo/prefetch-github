@@ -2,10 +2,11 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "make-tar";
-  buildInputs = [pkgs.ghc];
+  buildInputs = [pkgs.cargo];
   src = ./.;
   shellHook = ''
-    ghc -o prefetch-github prefetch-github.hs
+    cargo build --release
+    mv target/release/prefetch-github .
     mkdir -p bin
     mv prefetch-github bin
     tar zcvf prefetch-github.tar.gz bin
